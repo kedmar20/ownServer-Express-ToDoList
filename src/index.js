@@ -10,7 +10,8 @@
 
     //get from serwer function:
     function getFromSerwer(){
-        return fetch("http://localhost:8888/todolist").then((res)=>res.json());
+        // return fetch("http://localhost:8888/todolist").then((res)=>res.json());
+        return fetch("https://apptodobackend101.herokuapp.com/todolist").then((res)=>res.json());
     }
 
     //function to rolls all tasks from serwer
