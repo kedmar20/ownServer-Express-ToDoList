@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100,200,300;500;700&display=swap");
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Verdana', sans-serif; */
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --plum1: rgb(66,42,76);
+    --plum2: rgb(59, 38, 68);
+    --coolDarkGreen: rgb(29,51,64);
+    --warmRed: rgb(226,39,34);
+    --warmOrange: rgb(232,125,75);
+    --white: rgb(233, 230, 230);
+    --black: rgb(27, 27, 27);
+    --greyPlaceholder: rgb(148, 147, 147);
+}
+
+body {
+    background: var(--plum1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--white);
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+}
+
+header {
+    padding: 4rem 1rem 0rem 1rem;
+    max-width: 70vw;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 3vw;
+    font-weight: 200;
+    text-align: center ;
+    color: var(--warmOrange);
+    margin-bottom: 1rem;    
+}
+
+#task-form-container {
+    display:flex;
+    flex-wrap: wrap;
+    width: 70%;    
+    justify-content: center;
+}
+
+/* no default styling for all inputs and button - to edit all ourselves */
+input, button {
+    background: none; 
+    appearance: none;
+    border: none;
+    outline: none;       
+}
+
+#task-form-input {
+    flex: 1 1 0%;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    /* flex-basis: 0%; */
+    background-color: var(--white);
+    padding: 1rem 2rem 1rem 2rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    font-size: 3vw;
+    max-width: 80vw;
+}
+
+#task-form-input::placeholder {
+    color: var(--greyPlaceholder);
+}
+
+#task-form-submit {
+    color: var(--white);
+    font-size: 1.25vw;
+    font-weight: 200;    
+    /* background-image: linear-gradient(to right, var(--pink), var(--purple));    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    /* -webkit-text-fill-color: black; */
+    cursor: pointer;
+    transition: all 0.8s;
+    width: 12vw;
+    height: 4vw;
+    background-color: var(--coolDarkGreen);
+    padding: 1vw 1vw 1.2vw 1vw;    
+    border: 0.2rem solid var(--black) ;
+    border-radius: 3vw;
+}
+
+#task-form-submit:hover {    
+    opacity: 0.3;   
+}
+
+#task-form-submit:active {
+    opacity: 0.3;
+}
+main {
+    flex: 1 1 0%; 
+    padding: 2rem 1rem;
+	max-width: 90vw;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+    padding: 1rem 0;
+}
+
+.task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--warmOrange);
+    margin-bottom: 1rem;
+}
+
+#tasks .task {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--plum2);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#tasks .task .content .text {
+    color: var(--white);
+    font-size: 1.125rem;
+    width: 100%;    
+    display: block;
+    transition: 0.4s;
+}
+
+#tasks .task .content .text:not(:read-only) {
+color: var(--warmRed);
+background-color: white;
+padding: 2vw;
+}
+
+#tasks .task .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.task .actions button {
+    color: var(--warmRed);
+    background-image: linear-gradient(to right, var(--warmOrange), var(--warmRed));    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.8s;
+    margin: 0 0.5rem;
+}
+
+.task .actions button:hover {    
+    opacity: 0.3;   
+    background-image: linear-gradient(to right, var(--warmRed), var(--white));    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+
+.task .actions button:active {
+    /* opacity: 0.4; */
+    color: var(--warmOrange);
+}
+
+.task .actions .delite {
+    color: var(--white);
+}
+
+.content {
+    max-width: 90vw; 
+    min-width: 50vw;
+}
+
+@media only screen and (max-width: 1150px) {
+    header h1 {
+        font-size: 8vw;       
+    }
+    #task-form-input {
+        font-size: 6vw;
+    }    
+    #task-form-submit {
+        color: var(--white);
+        font-size: 4.25vw;
+        font-weight: 200;          
+        cursor: pointer;
+        transition: all 0.8s;
+        width: auto;
+        height: 12vw;
+        background-color: var(--coolDarkGreen);
+        padding: 2vw 5vw;    
+        border: 0.2rem solid var(--black) ;
+        border-radius: 6vw;        
+    } 
+    .task-list h2 {
+        font-size: 5vw;
+        font-weight: 300;
+        color: var(--warmOrange);
+        margin-bottom: 1rem;
+    }
+    .content {        
+        max-width: 90vw;         
+        width: 90vw;
+    }
+}
