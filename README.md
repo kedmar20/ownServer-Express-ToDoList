@@ -1,4 +1,4 @@
-# todolist101
+# ownServer-Express-ToDoList
 A simple Task List app running on Vanilla JavaScript. 
 
 Frontend deploy on GithubPages with Webpack: https://kedmar20.github.io/todolist101/
