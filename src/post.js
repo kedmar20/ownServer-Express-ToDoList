@@ -10,5 +10,5 @@ const sendItemToTheBackend = function sendItemToBackend(item) {
       },
    });
 };
-
+//
 export default sendItemToTheBackend;
